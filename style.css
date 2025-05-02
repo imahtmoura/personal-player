@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1em;
 }
 
 button {
@@ -20,6 +21,7 @@ button {
     justify-content: space-between;
     align-items: center;
     margin: 3em 0 1em 0;
+    gap: 1em;
 }
 
 #button-container {
@@ -27,6 +29,7 @@ button {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    gap: 1em;
 }
 
 .button {
@@ -43,7 +46,8 @@ button {
 }
 
 #cover {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 
 #playlist-title {
@@ -51,6 +55,7 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 0.5em;
 }
 
 #song-name {
@@ -63,7 +68,7 @@ button {
 }
 
 #progress-bar {
-    background-color: rgb(139,153,156);
+    background-color: rgb(139, 153, 156);
     height: 3px;
     width: 100%;
     border-radius: 15px;
@@ -72,10 +77,11 @@ button {
 #current-progress {
     --progress: 0%;
     background-color: white;
-    height:inherit;
+    height: inherit;
     width: var(--progress);
     border-radius: inherit;
 }
+
 #progress-container {
     cursor: pointer;
 }
@@ -90,4 +96,39 @@ button {
     justify-content: space-between;
     font-size: smaller;
     margin-top: 0.5em;
+}
+
+/* =========================
+   Responsividade: Telas pequenas
+   ========================= */
+@media (max-width: 768px) {
+    #below-cover {
+        flex-direction: column;
+        margin: 2em 0;
+    }
+
+    #button-container {
+        flex-direction: column;
+    }
+
+    .button {
+        font-size: 1.2em;
+    }
+
+    .button-navigate {
+        font-size: 2em;
+    }
+
+    .button-biggest {
+        font-size: 3em;
+    }
+
+    #playlist-title {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #song-name {
+        font-size: 1.2em;
+    }
 }
